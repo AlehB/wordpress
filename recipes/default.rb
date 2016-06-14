@@ -18,3 +18,5 @@
 #
 
 include_recipe "wordpress::apache"
+
+include_recipe "wordpress::wptheme"

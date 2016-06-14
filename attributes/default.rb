@@ -43,7 +43,7 @@ when 'ubuntu'
   else
     default['wordpress']['db']['mysql_version'] = '5.5'
   end
-when 'centos', 'redhat'
+when 'centos', 'redhat', 'amazon', 'scientific'
   if node['platform_version'].to_i < 6
     default['wordpress']['db']['mysql_version'] = '5.0'
   elsif node['platform_version'].to_i < 7
@@ -101,3 +101,6 @@ else
 end
 
 default['wordpress']['php_options'] = { 'php_admin_value[upload_max_filesize]' => '50M', 'php_admin_value[post_max_size]' => '55M' }
+
+default['wordpress']['themes']['default'] = 'twentysixteen'
+#by default you can choose between twentysixteen, twentyfifteen, twentyfourteen
